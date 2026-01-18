@@ -421,20 +421,33 @@ let isRolling = false;
 let totalRolls = 0;
 let totalWon = 0;
 
+// Initialize display
+getBalance();
+updateBetDisplay();
+
 function getBalance() {
-    fetch('../api/get-balance.php')
+    return fetch('../api/get-balance.php')
         .then(r => r.json())
         .then(d => {
             document.getElementById('balanceDisplay').textContent = '₹' + d.balance.toLocaleString('en-IN', {minimumFractionDigits: 2});
-            updateBetDisplay();
+            return d.balance;
         });
 }
 
 function setBet(amount) {
-    const balance = parseFloat(document.getElementById('balanceDisplay').textContent.replace('₹', '').replace(/,/g, ''));
-    const bet = Math.min(amount, balance, 5500);
-    document.getElementById('betAmount').value = bet;
-    updateBetDisplay();
+    if (typeof amount === 'object' && amount.then) {
+        // If amount is a Promise (from getBalance)
+        amount.then(balance => {
+            const bet = Math.min(balance, 5500);
+            document.getElementById('betAmount').value = bet;
+            updateBetDisplay();
+        });
+    } else {
+        const balance = parseFloat(document.getElementById('balanceDisplay').textContent.replace('₹', '').replace(/,/g, ''));
+        const bet = Math.min(amount, balance, 5500);
+        document.getElementById('betAmount').value = bet;
+        updateBetDisplay();
+    }
 }
 
 function updateBetDisplay() {
