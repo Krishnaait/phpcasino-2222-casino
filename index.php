@@ -257,6 +257,7 @@ include 'includes/header.php';
         transition: all 0.3s ease;
         text-decoration: none;
         display: inline-block;
+        text-align: center;
     }
 
     .play-btn:hover {
@@ -358,56 +359,56 @@ include 'includes/header.php';
                 <div class="game-icon">🎲</div>
                 <h3 class="game-title">Dice Game</h3>
                 <p class="game-description">Predict HIGH or LOW and roll the dice! Simple yet thrilling gameplay with 2x multiplier.</p>
-                <button class="play-btn" onclick="window.location.href='/games/dice.php'">PLAY NOW</button>
+                <a href="/games/dice.php" class="play-btn">PLAY NOW</a>
             </div>
 
             <div class="game-card">
                 <div class="game-icon">💎</div>
                 <h3 class="game-title">Mines</h3>
                 <p class="game-description">Reveal tiles and avoid mines! Progressive multipliers with strategic cashout options.</p>
-                <button class="play-btn" onclick="window.location.href='/games/mines.php'">PLAY NOW</button>
+                <a href="/games/mines.php" class="play-btn">PLAY NOW</a>
             </div>
 
             <div class="game-card">
                 <div class="game-icon">🐔</div>
                 <h3 class="game-title">Chicken</h3>
                 <p class="game-description">Navigate through obstacles in this skill-based runner game. How far can you go?</p>
-                <button class="play-btn" onclick="window.location.href='/games/chicken.php'">PLAY NOW</button>
+                <a href="/games/chicken.php" class="play-btn">PLAY NOW</a>
             </div>
 
             <div class="game-card">
                 <div class="game-icon">🎯</div>
                 <h3 class="game-title">Plinko</h3>
                 <p class="game-description">Drop balls through pegs and watch them bounce! Physics-based fun with multiple ball drops.</p>
-                <button class="play-btn" onclick="window.location.href='/games/plinko.php'">PLAY NOW</button>
+                <a href="/games/plinko.php" class="play-btn">PLAY NOW</a>
             </div>
 
             <div class="game-card">
                 <div class="game-icon">🎡</div>
                 <h3 class="game-title">Lucky Spin</h3>
                 <p class="game-description">Spin the wheel of fortune! 8 segments with multipliers up to 5x your bet.</p>
-                <button class="play-btn" onclick="window.location.href='/games/lucky-spin.php'">PLAY NOW</button>
+                <a href="/games/lucky-spin.php" class="play-btn">PLAY NOW</a>
             </div>
 
             <div class="game-card">
                 <div class="game-icon">🔮</div>
                 <h3 class="game-title">Guess the Number</h3>
                 <p class="game-description">Pick a number from 1-7 and test your luck! Win 7x your bet with the right guess.</p>
-                <button class="play-btn" onclick="window.location.href='/games/guess-the-no.php'">PLAY NOW</button>
+                <a href="/games/guess-the-no.php" class="play-btn">PLAY NOW</a>
             </div>
 
             <div class="game-card">
                 <div class="game-icon">🏹</div>
                 <h3 class="game-title">Archery</h3>
                 <p class="game-description">Hit the bullseye in this time-based archery challenge! Precision and speed matter.</p>
-                <button class="play-btn" onclick="window.location.href='/games/shooting.php'">PLAY NOW</button>
+                <a href="/games/shooting.php" class="play-btn">PLAY NOW</a>
             </div>
 
             <div class="game-card">
                 <div class="game-icon">🏎️</div>
                 <h3 class="game-title">Racing</h3>
                 <p class="game-description">Dodge traffic and reach the finish line! Speed boosts increase your multiplier.</p>
-                <button class="play-btn" onclick="window.location.href='/games/racing.php'">PLAY NOW</button>
+                <a href="/games/racing.php" class="play-btn">PLAY NOW</a>
             </div>
         </div>
     </div>
