@@ -394,7 +394,7 @@ function drawWheel(rotation = 0) {
     // Draw center circle
     ctx.beginPath();
     ctx.arc(0, 0, 30, 0, Math.PI * 2);
-    ctx.fillStyle = var(--accent-gold);
+    ctx.fillStyle = '#ffd700';
     ctx.fill();
     ctx.strokeStyle = '#fff';
     ctx.lineWidth = 2;
