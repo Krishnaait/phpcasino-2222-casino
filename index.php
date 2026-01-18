@@ -351,7 +351,7 @@ include 'includes/header.php';
                 </ul>
             </div>
             <div class="game-card-footer">
-                <button class="play-btn" onclick="window.location.href='games/dice.php'">PLAY NOW</button>
+                <button class="play-btn" onclick="window.location.href='/games/dice.php'">PLAY NOW</button>
             </div>
         </div>
 
@@ -371,7 +371,7 @@ include 'includes/header.php';
                 </ul>
             </div>
             <div class="game-card-footer">
-                <button class="play-btn" onclick="window.location.href='games/mines.php'">PLAY NOW</button>
+                <button class="play-btn" onclick="window.location.href='/games/mines.php'">PLAY NOW</button>
             </div>
         </div>
 
@@ -391,7 +391,7 @@ include 'includes/header.php';
                 </ul>
             </div>
             <div class="game-card-footer">
-                <button class="play-btn" onclick="window.location.href='games/chicken.php'">PLAY NOW</button>
+                <button class="play-btn" onclick="window.location.href='/games/chicken.php'">PLAY NOW</button>
             </div>
         </div>
 
@@ -411,7 +411,7 @@ include 'includes/header.php';
                 </ul>
             </div>
             <div class="game-card-footer">
-                <button class="play-btn" onclick="window.location.href='games/plinko.php'">PLAY NOW</button>
+                <button class="play-btn" onclick="window.location.href='/games/plinko.php'">PLAY NOW</button>
             </div>
         </div>
 
@@ -431,7 +431,7 @@ include 'includes/header.php';
                 </ul>
             </div>
             <div class="game-card-footer">
-                <button class="play-btn" onclick="window.location.href='games/lucky-spin.php'">PLAY NOW</button>
+                <button class="play-btn" onclick="window.location.href='/games/lucky-spin.php'">PLAY NOW</button>
             </div>
         </div>
 
@@ -451,7 +451,7 @@ include 'includes/header.php';
                 </ul>
             </div>
             <div class="game-card-footer">
-                <button class="play-btn" onclick="window.location.href='games/guess-the-no.php'">PLAY NOW</button>
+                <button class="play-btn" onclick="window.location.href='/games/guess-the-no.php'">PLAY NOW</button>
             </div>
         </div>
 
@@ -471,7 +471,7 @@ include 'includes/header.php';
                 </ul>
             </div>
             <div class="game-card-footer">
-                <button class="play-btn" onclick="window.location.href='games/shooting.php'">PLAY NOW</button>
+                <button class="play-btn" onclick="window.location.href='/games/shooting.php'">PLAY NOW</button>
             </div>
         </div>
 
@@ -491,7 +491,7 @@ include 'includes/header.php';
                 </ul>
             </div>
             <div class="game-card-footer">
-                <button class="play-btn" onclick="window.location.href='games/racing.php'">PLAY NOW</button>
+                <button class="play-btn" onclick="window.location.href='/games/racing.php'">PLAY NOW</button>
             </div>
         </div>
     </div>
@@ -544,7 +544,7 @@ include 'includes/header.php';
 <div class="cta-section">
     <h2 class="cta-title">Ready to Test Your Luck?</h2>
     <p class="cta-text">Choose your favorite game and start playing with ₹10,000 virtual currency. No limits, no pressure - just pure entertainment!</p>
-    <button class="cta-btn" onclick="window.location.href='pages/games.php'">EXPLORE ALL GAMES</button>
+    <button class="cta-btn" onclick="window.location.href='/pages/games.php'">EXPLORE ALL GAMES</button>
 </div>
 
 <?php include 'includes/footer.php'; ?>

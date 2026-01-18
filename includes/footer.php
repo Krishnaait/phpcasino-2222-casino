@@ -16,20 +16,20 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="pages/games.php">Games</a></li>
-                    <li><a href="pages/about.php">About Us</a></li>
-                    <li><a href="pages/contact.php">Contact</a></li>
+                    <li><a href="/index.php">Home</a></li>
+                    <li><a href="/pages/games.php">Games</a></li>
+                    <li><a href="/pages/about.php">About Us</a></li>
+                    <li><a href="/pages/contact.php">Contact</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
                 <h3>Legal</h3>
                 <ul>
-                    <li><a href="pages/privacy.php">Privacy Policy</a></li>
-                    <li><a href="pages/terms.php">Terms & Conditions</a></li>
-                    <li><a href="pages/disclaimer.php">Disclaimer</a></li>
-                    <li><a href="pages/responsible-gaming.php">Responsible Gaming</a></li>
+                    <li><a href="/pages/privacy.php">Privacy Policy</a></li>
+                    <li><a href="/pages/terms.php">Terms & Conditions</a></li>
+                    <li><a href="/pages/disclaimer.php">Disclaimer</a></li>
+                    <li><a href="/pages/responsible-gaming.php">Responsible Gaming</a></li>
                 </ul>
             </div>
 
@@ -61,7 +61,7 @@
     <script>
         // Update balance in real-time
         function updateBalanceDisplay() {
-            fetch('<?php echo (strpos($_SERVER['PHP_SELF'], '/games/') !== false || strpos($_SERVER['PHP_SELF'], '/pages/') !== false) ? '../' : ''; ?>api/get-balance.php')
+            fetch('/api/get-balance.php')
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('balanceDisplay').textContent = '₹' + data.balance.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2});
@@ -75,7 +75,7 @@
         // Reset balance function
         function resetBalance() {
             if (confirm('Are you sure you want to reset your balance to ₹10,000?')) {
-                fetch('<?php echo (strpos($_SERVER['PHP_SELF'], '/games/') !== false || strpos($_SERVER['PHP_SELF'], '/pages/') !== false) ? '../' : ''; ?>api/reset-balance.php', {
+                fetch('/api/reset-balance.php', {
                     method: 'POST'
                 })
                 .then(response => response.json())

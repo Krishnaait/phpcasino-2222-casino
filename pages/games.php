@@ -163,7 +163,7 @@ include '../includes/header.php';
             </ul>
         </div>
         <div class="game-card-footer">
-            <button class="play-btn" onclick="window.location.href='../games/dice.php'">PLAY NOW</button>
+            <button class="play-btn" onclick="window.location.href='/games/dice.php'">PLAY NOW</button>
         </div>
     </div>
 
@@ -183,7 +183,7 @@ include '../includes/header.php';
             </ul>
         </div>
         <div class="game-card-footer">
-            <button class="play-btn" onclick="window.location.href='../games/mines.php'">PLAY NOW</button>
+            <button class="play-btn" onclick="window.location.href='/games/mines.php'">PLAY NOW</button>
         </div>
     </div>
 
@@ -203,7 +203,7 @@ include '../includes/header.php';
             </ul>
         </div>
         <div class="game-card-footer">
-            <button class="play-btn" onclick="window.location.href='../games/chicken.php'">PLAY NOW</button>
+            <button class="play-btn" onclick="window.location.href='/games/chicken.php'">PLAY NOW</button>
         </div>
     </div>
 
@@ -223,7 +223,7 @@ include '../includes/header.php';
             </ul>
         </div>
         <div class="game-card-footer">
-            <button class="play-btn" onclick="window.location.href='../games/plinko.php'">PLAY NOW</button>
+            <button class="play-btn" onclick="window.location.href='/games/plinko.php'">PLAY NOW</button>
         </div>
     </div>
 
@@ -243,7 +243,7 @@ include '../includes/header.php';
             </ul>
         </div>
         <div class="game-card-footer">
-            <button class="play-btn" onclick="window.location.href='../games/lucky-spin.php'">PLAY NOW</button>
+            <button class="play-btn" onclick="window.location.href='/games/lucky-spin.php'">PLAY NOW</button>
         </div>
     </div>
 
@@ -263,7 +263,7 @@ include '../includes/header.php';
             </ul>
         </div>
         <div class="game-card-footer">
-            <button class="play-btn" onclick="window.location.href='../games/guess-the-no.php'">PLAY NOW</button>
+            <button class="play-btn" onclick="window.location.href='/games/guess-the-no.php'">PLAY NOW</button>
         </div>
     </div>
 
@@ -283,7 +283,7 @@ include '../includes/header.php';
             </ul>
         </div>
         <div class="game-card-footer">
-            <button class="play-btn" onclick="window.location.href='../games/shooting.php'">PLAY NOW</button>
+            <button class="play-btn" onclick="window.location.href='/games/shooting.php'">PLAY NOW</button>
         </div>
     </div>
 
@@ -303,7 +303,7 @@ include '../includes/header.php';
             </ul>
         </div>
         <div class="game-card-footer">
-            <button class="play-btn" onclick="window.location.href='../games/racing.php'">PLAY NOW</button>
+            <button class="play-btn" onclick="window.location.href='/games/racing.php'">PLAY NOW</button>
         </div>
     </div>
 </div>

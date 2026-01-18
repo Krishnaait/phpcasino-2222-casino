@@ -372,16 +372,16 @@
     <!-- Navigation Header -->
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="<?php echo (strpos($_SERVER['PHP_SELF'], '/games/') !== false || strpos($_SERVER['PHP_SELF'], '/pages/') !== false) ? '../' : ''; ?>index.php" class="navbar-brand">
+            <a href="/index.php" class="navbar-brand">
                 <i class="fas fa-dice"></i>
                 CASINO
             </a>
 
             <ul class="navbar-menu">
-                <li><a href="<?php echo (strpos($_SERVER['PHP_SELF'], '/games/') !== false || strpos($_SERVER['PHP_SELF'], '/pages/') !== false) ? '../' : ''; ?>index.php">Home</a></li>
-                <li><a href="<?php echo (strpos($_SERVER['PHP_SELF'], '/games/') !== false || strpos($_SERVER['PHP_SELF'], '/pages/') !== false) ? '../pages/' : 'pages/'; ?>games.php">Games</a></li>
-                <li><a href="<?php echo (strpos($_SERVER['PHP_SELF'], '/games/') !== false || strpos($_SERVER['PHP_SELF'], '/pages/') !== false) ? '../pages/' : 'pages/'; ?>about.php">About</a></li>
-                <li><a href="<?php echo (strpos($_SERVER['PHP_SELF'], '/games/') !== false || strpos($_SERVER['PHP_SELF'], '/pages/') !== false) ? '../pages/' : 'pages/'; ?>contact.php">Contact</a></li>
+                <li><a href="/index.php">Home</a></li>
+                <li><a href="/pages/games.php">Games</a></li>
+                <li><a href="/pages/about.php">About</a></li>
+                <li><a href="/pages/contact.php">Contact</a></li>
             </ul>
 
             <div class="navbar-right">
