@@ -8,7 +8,7 @@ include 'includes/header.php';
     /* Hero Section with Banner */
     .hero {
         position: relative;
-        background: url('/assets/images/hero-banner.png') center/cover no-repeat;
+        background: url('/assets/images/hero-banner.webp') center/cover no-repeat;
         border-radius: var(--radius-2xl);
         padding: 100px 40px;
         text-align: center;
@@ -106,7 +106,7 @@ include 'includes/header.php';
     /* Promo Banner */
     .promo-banner {
         position: relative;
-        background: url('/assets/images/promo-banner.png') center/cover no-repeat;
+        background: url('/assets/images/promo-banner.webp') center/cover no-repeat;
         border-radius: var(--radius-2xl);
         padding: 60px 40px;
         text-align: center;
@@ -166,7 +166,7 @@ include 'includes/header.php';
         left: -50px;
         right: -50px;
         bottom: 0;
-        background: url('/assets/images/games-section-bg.png') center/cover;
+        background: url('/assets/images/games-section-bg.webp') center/cover;
         opacity: 0.1;
         z-index: 0;
         border-radius: var(--radius-2xl);
