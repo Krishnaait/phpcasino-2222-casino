@@ -1,0 +1,374 @@
+/* Responsive Design */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    :root {
+        --spacing-lg: 16px;
+        --spacing-xl: 24px;
+    }
+
+    .navbar-container {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .balance-display {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .main-container {
+        padding: 15px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Game Containers */
+    .game-wrapper {
+        grid-template-columns: 1fr !important;
+    }
+
+    .control-panel {
+        position: relative !important;
+        top: 0 !important;
+    }
+
+    /* Grids */
+    .game-grid,
+    .mines-grid,
+    .chicken-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 8px !important;
+    }
+
+    /* Canvas */
+    canvas {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Mobile (576px and below) */
+@media (max-width: 576px) {
+    :root {
+        --spacing-md: 12px;
+        --spacing-lg: 16px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .navbar-brand i {
+        font-size: 1.5rem;
+    }
+
+    .navbar-right {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .balance-display {
+        width: 100%;
+        justify-content: center;
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .reset-btn {
+        width: 100%;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .main-container {
+        padding: 12px;
+        min-height: calc(100vh - 60px);
+    }
+
+    /* Headings */
+    h1 {
+        font-size: 1.5rem !important;
+    }
+
+    h2 {
+        font-size: 1.3rem !important;
+    }
+
+    h3 {
+        font-size: 1.1rem !important;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+
+    /* Game Grid */
+    .game-grid,
+    .mines-grid,
+    .chicken-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 6px !important;
+    }
+
+    .game-box,
+    .mine-tile,
+    .chicken-box {
+        font-size: 1.5rem !important;
+    }
+
+    /* Control Panel */
+    .control-panel {
+        padding: 15px !important;
+    }
+
+    .control-title {
+        font-size: 1.1rem !important;
+    }
+
+    .control-label {
+        font-size: 0.9rem !important;
+    }
+
+    .control-input,
+    .control-select {
+        padding: 8px !important;
+        font-size: 0.9rem !important;
+    }
+
+    .bet-presets {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 6px !important;
+    }
+
+    .preset-btn {
+        padding: 6px !important;
+        font-size: 0.75rem !important;
+    }
+
+    /* Action Buttons */
+    .action-button,
+    .drop-button,
+    .roll-button,
+    .start-button,
+    .cashout-button {
+        padding: 12px !important;
+        font-size: 1rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    /* Stats Grid */
+    .game-stats,
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+
+    .stat-card,
+    .stat-box {
+        padding: 12px !important;
+    }
+
+    .stat-label {
+        font-size: 0.8rem !important;
+    }
+
+    .stat-value {
+        font-size: 1.2rem !important;
+    }
+
+    /* Multipliers */
+    .multipliers {
+        gap: 3px !important;
+    }
+
+    .multiplier {
+        padding: 8px 3px !important;
+        font-size: 0.7rem !important;
+    }
+
+    /* Dice Display */
+    .dice-display {
+        gap: 15px !important;
+    }
+
+    .dice {
+        width: 80px !important;
+        height: 80px !important;
+        font-size: 2.5rem !important;
+    }
+
+    /* Prediction Buttons */
+    .prediction-buttons {
+        gap: 8px !important;
+    }
+
+    .prediction-btn {
+        padding: 10px 16px !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* Game Area */
+    .game-area {
+        padding: 15px !important;
+    }
+
+    .game-title {
+        font-size: 1.3rem !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* Info Box */
+    .info-box {
+        padding: 12px !important;
+        margin-top: 12px !important;
+    }
+
+    .info-title {
+        font-size: 0.9rem !important;
+        margin-bottom: 6px !important;
+    }
+
+    .info-text {
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 20px 15px !important;
+    }
+
+    .footer-section h3 {
+        font-size: 1rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    .footer-section p {
+        font-size: 0.85rem !important;
+    }
+
+    .legal-disclaimer {
+        padding: 10px !important;
+        font-size: 0.75rem !important;
+    }
+
+    .age-badge {
+        padding: 4px 8px !important;
+        font-size: 0.7rem !important;
+    }
+
+    /* Toast */
+    .toast {
+        right: 10px !important;
+        left: 10px !important;
+        max-width: none !important;
+        top: 80px !important;
+    }
+}
+
+/* Extra Small (360px and below) */
+@media (max-width: 360px) {
+    .game-grid,
+    .mines-grid,
+    .chicken-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 5px !important;
+    }
+
+    .game-box,
+    .mine-tile,
+    .chicken-box {
+        font-size: 1.2rem !important;
+    }
+
+    .balance-display {
+        font-size: 0.75rem !important;
+        padding: 6px 10px !important;
+    }
+
+    .navbar-brand {
+        font-size: 1rem !important;
+    }
+
+    .navbar-brand i {
+        font-size: 1.2rem !important;
+    }
+
+    h1 {
+        font-size: 1.2rem !important;
+    }
+
+    .control-panel {
+        padding: 12px !important;
+    }
+
+    .bet-presets {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Landscape Mode */
+@media (max-height: 600px) and (orientation: landscape) {
+    .navbar {
+        padding: 8px 15px;
+    }
+
+    .main-container {
+        padding: 10px;
+        min-height: auto;
+    }
+
+    .game-area {
+        padding: 15px !important;
+    }
+
+    .control-panel {
+        position: relative !important;
+        top: 0 !important;
+        padding: 15px !important;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .footer,
+    .control-panel,
+    .action-button,
+    .reset-btn {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .main-container {
+        padding: 0;
+        min-height: auto;
+    }
+}
