@@ -450,7 +450,10 @@ function spinWheel() {
 
         const winningIndex = Math.floor(Math.random() * multipliers.length);
         const winningMultiplier = multipliers[winningIndex];
-        const targetRotation = (Math.PI * 2) - (winningIndex * (Math.PI * 2 / multipliers.length)) + Math.PI * 2 * 5;
+        const segmentAngle = (Math.PI * 2) / multipliers.length;
+        // Calculate rotation so the pointer (top center) points to the winning segment
+        // Add offset to center the pointer on the segment
+        const targetRotation = (Math.PI * 2 * 5) + (Math.PI * 2) - (winningIndex * segmentAngle) - (segmentAngle / 2);
 
         let currentRotation = 0;
         const startTime = Date.now();

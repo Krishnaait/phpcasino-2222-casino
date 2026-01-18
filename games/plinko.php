@@ -309,7 +309,17 @@ include '../includes/header.php';
                 </div>
             </div>
 
-            <button id="dropButton" class="drop-btn">🎯 DROP BALL 🎯</button>
+            <div class="bet-controls" style="margin-bottom: 15px;">
+                <label class="bet-label">Number of Balls:</label>
+                <select id="ballCount" class="bet-input" style="padding: 10px;">
+                    <option value="1">1 Ball</option>
+                    <option value="3">3 Balls</option>
+                    <option value="5">5 Balls</option>
+                    <option value="10">10 Balls</option>
+                </select>
+            </div>
+
+            <button id="dropButton" class="drop-btn">🎯 DROP BALLS 🎯</button>
 
             <div class="game-stats">
                 <div class="stat-box">
@@ -527,14 +537,16 @@ function dropBall() {
 
     getBalance().then(balance => {
         const bet = parseFloat(document.getElementById('betAmount').value);
+        const ballCount = parseInt(document.getElementById('ballCount').value);
+        const totalBet = bet * ballCount;
         
         if (bet < 200 || bet > 5500) {
             showNotification('Bet must be between ₹200 and ₹5,500', 'error');
             return;
         }
 
-        if (bet > balance) {
-            showNotification('Insufficient balance!', 'error');
+        if (totalBet > balance) {
+            showNotification(`Insufficient balance! Need ₹${totalBet.toLocaleString('en-IN')} for ${ballCount} balls`, 'error');
             return;
         }
 
@@ -544,16 +556,29 @@ function dropBall() {
         fetch('../api/update-balance.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ amount: -bet })
+            body: JSON.stringify({ amount: -totalBet })
         }).then(r => r.json()).then(d => {
             document.getElementById('balance').textContent = '₹' + d.balance.toLocaleString('en-IN', {minimumFractionDigits: 2});
             
-            gameState.totalDrops++;
-            document.getElementById('totalDrops').textContent = gameState.totalDrops;
+            // Drop multiple balls with delay
+            for (let i = 0; i < ballCount; i++) {
+                setTimeout(() => {
+                    gameState.totalDrops++;
+                    document.getElementById('totalDrops').textContent = gameState.totalDrops;
 
-            const startX = canvas.width / 2 + (Math.random() - 0.5) * 40;
-            const ball = new Ball(startX, 20, bet);
-            gameState.balls.push(ball);
+                    const startX = canvas.width / 2 + (Math.random() - 0.5) * 60;
+                    const ball = new Ball(startX, 20, bet);
+                    gameState.balls.push(ball);
+                    
+                    // Re-enable button after last ball
+                    if (i === ballCount - 1) {
+                        setTimeout(() => {
+                            gameState.isDropping = false;
+                            document.getElementById('dropButton').disabled = false;
+                        }, 3000);
+                    }
+                }, i * 300); // 300ms delay between each ball
+            }
         });
     });
 }

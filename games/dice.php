@@ -496,7 +496,19 @@ function rollDice() {
     dice1.classList.add('rolling');
     dice2.classList.add('rolling');
 
+    // Animate spinning numbers
+    let spinCount = 0;
+    const spinInterval = setInterval(() => {
+        dice1.textContent = Math.floor(Math.random() * 6) + 1;
+        dice2.textContent = Math.floor(Math.random() * 6) + 1;
+        spinCount++;
+        if (spinCount >= 15) {
+            clearInterval(spinInterval);
+        }
+    }, 50);
+
     setTimeout(() => {
+        clearInterval(spinInterval);
         const result1 = Math.floor(Math.random() * 6) + 1;
         const result2 = Math.floor(Math.random() * 6) + 1;
         const total = result1 + result2;
