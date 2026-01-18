@@ -30,6 +30,7 @@
                     <li><a href="/pages/terms.php">Terms & Conditions</a></li>
                     <li><a href="/pages/disclaimer.php">Disclaimer</a></li>
                     <li><a href="/pages/responsible-gaming.php">Responsible Gaming</a></li>
+                    <li><a href="/pages/fair-policy.php">Fair Policy</a></li>
                 </ul>
             </div>
 

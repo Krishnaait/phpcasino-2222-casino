@@ -58,9 +58,18 @@ include '../includes/header.php';
 
     .game-stats-bar {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 15px;
         margin-bottom: 20px;
+    }
+
+    .timer-warning {
+        animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { color: #ff4444; }
+        50% { color: #ff8888; }
     }
 
     .stat-item {
@@ -238,6 +247,10 @@ include '../includes/header.php';
                     <div class="stat-label">Multiplier</div>
                     <div class="stat-value" id="multiplier">1x</div>
                 </div>
+                <div class="stat-item">
+                    <div class="stat-label">Time Left</div>
+                    <div class="stat-value" id="timeLeft">60s</div>
+                </div>
             </div>
         </div>
 
@@ -262,7 +275,6 @@ include '../includes/header.php';
                     <button class="preset-btn" onclick="setBet(1000)">1K</button>
                     <button class="preset-btn" onclick="setBet(2000)">2K</button>
                     <button class="preset-btn" onclick="setBet(3500)">3.5K</button>
-                    <button class="preset-btn" onclick="setBet(getBalance())">MAX</button>
                 </div>
 
                 <div style="text-align: center; margin-bottom: 10px;">
@@ -321,14 +333,15 @@ const gameState = {
         y: canvas.height - 120,
         width: 40,
         height: 70,
-        speed: 5,
-        type: 'car' // car, bike, or truck
+        speed: 5
     },
     obstacles: [],
     distance: 0,
-    speed: 0,
+    speed: 30,
     multiplier: 1,
-    bet: 500,
+    bet: 0,
+    timeLeft: 60,
+    timerInterval: null,
     roadOffset: 0
 };
 
@@ -524,6 +537,15 @@ function updateGame() {
     document.getElementById('distance').textContent = Math.floor(gameState.distance) + '%';
     document.getElementById('speed').textContent = Math.floor(gameState.speed);
     document.getElementById('multiplier').textContent = gameState.multiplier.toFixed(2) + 'x';
+    
+    // Update timer display
+    const timeDisplay = document.getElementById('timeLeft');
+    timeDisplay.textContent = gameState.timeLeft + 's';
+    if (gameState.timeLeft <= 10) {
+        timeDisplay.classList.add('timer-warning');
+    } else {
+        timeDisplay.classList.remove('timer-warning');
+    }
 }
 
 function drawGame() {
@@ -555,6 +577,10 @@ function gameLoop() {
 function endGame(won) {
     gameState.active = false;
     clearInterval(gameInterval);
+    if (gameState.timerInterval) {
+        clearInterval(gameState.timerInterval);
+        gameState.timerInterval = null;
+    }
     
     const winAmount = won ? gameState.bet * gameState.multiplier : 0;
     totalRaces++;
@@ -622,6 +648,18 @@ function startGame() {
         gameState.multiplier = 1;
         gameState.obstacles = [];
         gameState.player.x = canvas.width / 2 - 20;
+        gameState.timeLeft = 60;
+        
+        // Start countdown timer
+        if (gameState.timerInterval) {
+            clearInterval(gameState.timerInterval);
+        }
+        gameState.timerInterval = setInterval(() => {
+            gameState.timeLeft--;
+            if (gameState.timeLeft <= 0) {
+                endGame(false);
+            }
+        }, 1000);
         
         document.getElementById('startButton').disabled = true;
         

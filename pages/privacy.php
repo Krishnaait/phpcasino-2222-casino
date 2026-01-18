@@ -93,7 +93,7 @@ include '../includes/header.php';
 
 <div class="privacy-header">
     <h1>Privacy Policy</h1>
-    <p>Last Updated: January 2025</p>
+    <p>Last Updated: January 2026</p>
 </div>
 
 <div class="privacy-content">
