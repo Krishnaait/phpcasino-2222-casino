@@ -454,4 +454,27 @@ include 'includes/header.php';
     </div>
 </div>
 
+<script>
+// Ensure all PLAY NOW buttons work by adding explicit click handlers
+document.addEventListener('DOMContentLoaded', function() {
+    const playButtons = document.querySelectorAll('.play-btn');
+    console.log('Found', playButtons.length, 'play buttons');
+    
+    playButtons.forEach((button, index) => {
+        const href = button.getAttribute('href');
+        console.log('Button', index, 'href:', href);
+        
+        // Add explicit click handler as backup
+        button.addEventListener('click', function(e) {
+            console.log('Button clicked:', href);
+            // Don't prevent default - let anchor tag work naturally
+        });
+        
+        // Ensure button is clickable
+        button.style.cursor = 'pointer';
+        button.style.pointerEvents = 'auto';
+    });
+});
+</script>
+
 <?php include 'includes/footer.php'; ?>
