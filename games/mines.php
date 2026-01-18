@@ -96,6 +96,12 @@ include '../includes/header.php';
         transform: scale(1.05);
     }
 
+    .mine-tile.disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+        pointer-events: none;
+    }
+
     .mine-tile.revealed {
         cursor: default;
         animation: tileReveal 0.3s ease;
@@ -421,9 +427,14 @@ function startGame() {
             body: JSON.stringify({amount: -gameState.bet})
         });
 
+        // Reset grid visually
+        document.querySelectorAll('.mine-tile').forEach(tile => {
+            tile.classList.remove('revealed', 'mine', 'safe', 'disabled');
+            tile.textContent = '?';
+        });
+
         document.getElementById('startBtn').disabled = true;
         document.getElementById('cashoutBtn').disabled = false;
-        document.querySelectorAll('.mine-tile').forEach(tile => tile.disabled = false);
 
         showNotification('Game started! Reveal safe tiles to increase multiplier', 'info');
     });
@@ -452,7 +463,7 @@ function revealTile(index) {
 
         document.getElementById('startBtn').disabled = false;
         document.getElementById('cashoutBtn').disabled = true;
-        document.querySelectorAll('.mine-tile').forEach(t => t.disabled = true);
+        document.querySelectorAll('.mine-tile').forEach(t => t.classList.add('disabled'));
 
         showNotification('Game Over! You hit a mine!', 'error');
     } else {
@@ -485,7 +496,7 @@ function cashout() {
     }).then(r => r.json()).then(d => {
         document.getElementById('startBtn').disabled = false;
         document.getElementById('cashoutBtn').disabled = true;
-        document.querySelectorAll('.mine-tile').forEach(t => t.disabled = true);
+        document.querySelectorAll('.mine-tile').forEach(t => t.classList.add('disabled'));
 
         showNotification(`Cashed out! You won ₹${winAmount.toLocaleString('en-IN', {minimumFractionDigits: 2})}`, 'success');
     });
