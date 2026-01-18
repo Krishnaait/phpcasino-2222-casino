@@ -258,6 +258,9 @@ include 'includes/header.php';
         text-decoration: none;
         display: inline-block;
         text-align: center;
+        position: relative;
+        z-index: 10;
+        pointer-events: auto;
     }
 
     .play-btn:hover {
